@@ -1,0 +1,18 @@
+The project consists of:
+
+1. an SQL script that needs to be executed in order to create the db
+2. the files with the actual code of the project
+
+The app was created in a MAMP environment using the Sublime text editor and Sequel Pro.
+
+The holidays/view.php will load the main page of the app.
+No front end was implemented since I focused on the back end and the OOP architecture of the app.
+
+The DatabaseUtils.php class is used to connect and to interact with the database. The functions included in this file are enough to cover all the actions I need to realize (read and update the database).
+
+The class Money extends the DatabaseUtils class to get the info concerning the amounts of the notes that are stored in the db.
+The function setAmounts() is the one that updates the table when a user succesfully withdraws money.
+
+The class Withdraw holds the logic of the algorithm. All scenarios are checked to see if the request amount of notes can be withdrawn from the ATM. If the transaction can be realized setAmounts (extended from Money) is called to update the db with the new values of the notes.
+
+The view.php file is the main view of the app. After the initialization of the page we can see the total amount of money that the ATM has. After every withdrawal we can also see the exact amount of notes in 20s and 50s.
